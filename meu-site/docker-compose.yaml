@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  meu-servidor-apache:
+    image: httpd:2.4.57
+    container_name: meu-servidor-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - /data/site:/usr/local/apache2/htdocs
+    networks:
+      - minha-rede
+
+networks:
+  minha-rede:
